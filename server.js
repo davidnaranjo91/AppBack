@@ -465,7 +465,7 @@ app.post("/api/invoices/:userId", (req, res) => {
     },
     items: invoiceItems,
     subtotal: total,
-    total: total, // Aquí podrías agregar impuestos si es necesario
+    total: total, 
     createdAt: new Date().toISOString(),
   }
 
@@ -488,7 +488,7 @@ app.post("/api/invoices/:userId", (req, res) => {
 // Obtener reporte de productos vendidos
 app.get("/api/reports/sales/:userId", (req, res) => {
   const { userId } = req.params
-  const { productName } = req.query // Parámetro opcional para filtrar por producto
+  const { productName } = req.query 
 
   const invoices = readInvoices()
   const userInvoices = invoices[userId] || []
